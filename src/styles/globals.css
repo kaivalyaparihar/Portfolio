@@ -1,0 +1,126 @@
+:root {
+  /* Base colors */
+  --bg-onyx: #0B0F0E;
+  --bg-emerald: #12382F;
+  --bg-moss: #354E39;
+
+  /* Text */
+  --text-light: #ffffff;
+  --text-sage: #677663;
+
+  /* Accents */
+  --accent-gold: #CBA135;
+  --accent-emerald: #12382F;
+
+  /* Glass effect */
+  --card-glass: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.15);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-light);
+  background: var(--bg-onyx);
+  font-family: 'Azonix', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-onyx);
+}
+
+/* Glassmorphic Card */
+.card {
+  background: var(--card-glass);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 25px rgba(203, 161, 53, 0.4);
+}
+
+/* Section backgrounds */
+.hero {
+  background: linear-gradient(135deg, var(--bg-onyx) 60%, var(--bg-emerald) 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.about-section {
+  background: var(--bg-onyx);
+  background: linear-gradient(135deg, var(--bg-onyx), var(--bg-moss));
+  padding: 4rem 2rem;
+}
+
+.skills-section {
+  background: var(--bg-onyx);
+  padding: 4rem 2rem;
+}
+
+.projects-section {
+  background: var(--bg-onyx);
+  background-image: radial-gradient(circle at top right, rgba(53, 78, 57, 0.2), transparent 70%),
+                    radial-gradient(circle at bottom left, rgba(53, 78, 57, 0.2), transparent 70%);
+  padding: 4rem 2rem;
+}
+
+.certifications-section {
+  background: var(--bg-onyx);
+  padding: 4rem 2rem;
+}
+
+.cybervulnx-section {
+  background: var(--bg-emerald);
+  color: var(--text-light);
+  padding: 4rem 2rem;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, var(--bg-emerald), var(--bg-onyx));
+  padding: 4rem 2rem;
+}
+
+footer {
+  background: var(--bg-onyx);
+  color: var(--text-sage);
+  padding: 2rem;
+  text-align: center;
+}
+
+footer a:hover {
+  color: var(--accent-gold);
+}
