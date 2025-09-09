@@ -1,44 +1,37 @@
-export default function Certifications() {
-  return (
-    <section
-      id="certifications"
-      style={{
-        backgroundColor: "#1a1a1a",
-        color: "white",
-        padding: "4rem 2rem",
-        textAlign: "center",
-      }}
-    >
-      <h2 style={{ fontSize: "2.5rem", marginBottom: "1.5rem" }}>
-        Certifications
-      </h2>
+// src/components/Certifications.js
+import React from 'react';
+// You can find logos for these on sites like simpleicons.org or get official ones.
+// For now, we'll use text.
 
-      <div
-        style={{
-          display: "flex",
-          overflowX: "auto",
-          gap: "2rem",
-          padding: "1rem",
-          maxWidth: "90%",
-          margin: "0 auto",
-        }}
-      >
-        <div style={{ minWidth: "200px", padding: "1rem", background: "#222", borderRadius: "8px" }}>
-          IBM Cybersecurity Analyst
-        </div>
-        <div style={{ minWidth: "200px", padding: "1rem", background: "#222", borderRadius: "8px" }}>
-          Python Bootcamp
-        </div>
-        <div style={{ minWidth: "200px", padding: "1rem", background: "#222", borderRadius: "8px" }}>
-          Data Science Bootcamp
-        </div>
-        <div style={{ minWidth: "200px", padding: "1rem", background: "#222", borderRadius: "8px" }}>
-          Network Security
-        </div>
-        <div style={{ minWidth: "200px", padding: "1rem", background: "#222", borderRadius: "8px" }}>
-          Cybersecurity Workshop
+const certifications = [
+  { name: 'IBM Cybersecurity Analyst' },
+  { name: 'Python Bootcamp' },
+  { name: 'Data Science Bootcamp' },
+  { name: 'Network Security' },
+  { name: 'IP and ID Systems' },
+];
+
+const Certifications = () => {
+  return (
+    <section className="certifications-section" id="certifications">
+      <h2>Achievements & Certifications</h2>
+      <div className="scroller">
+        <div className="scroller-inner">
+          {certifications.map((cert, index) => (
+            <div className="cert-card" key={`cert1-${index}`}>
+              <p>{cert.name}</p>
+            </div>
+          ))}
+          {/* We duplicate the list of certifications for a seamless loop */}
+          {certifications.map((cert, index) => (
+            <div className="cert-card" key={`cert2-${index}`}>
+              <p>{cert.name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Certifications;

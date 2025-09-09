@@ -1,40 +1,52 @@
-export default function Skills() {
+// src/components/Skills.js
+import React from 'react';
+// Import the icons we need
+import { FaShieldAlt, FaCode, FaServer, FaUsers } from 'react-icons/fa';
+
+const Skills = () => {
   return (
-    <section className="skills-section">
-      <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Skills</h2>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "2rem",
-          maxWidth: "1000px",
-          margin: "0 auto",
-        }}
-      >
-        {/* Programming Languages */}
-        <div className="card">
-          <h3 style={{ marginBottom: "1rem" }}>Programming</h3>
-          <p>Python, Java, HTML, CSS, JavaScript</p>
+    <section className="skills-section" id="skills">
+      <h2>Core Competencies</h2>
+      <div className="skills-grid">
+        <div className="skill-card card large">
+          <FaShieldAlt className="skill-icon" />
+          <h3>Cybersecurity & Tools</h3>
+          <ul>
+            <li>Splunk (SIEM)</li>
+            <li>Nmap, Burp Suite, Nessus</li>
+            <li>Metasploit Framework</li>
+            <li>Wireshark, Nikto</li>
+            <li>Hydra, John the Ripper</li>
+          </ul>
         </div>
-
-        {/* Cybersecurity Tools */}
-        <div className="card">
-          <h3 style={{ marginBottom: "1rem" }}>Cybersecurity Tools</h3>
-          <p>Nmap, Burp Suite, Nessus, Metasploit, Wireshark, Splunk</p>
+        <div className="skill-card card">
+          <FaCode className="skill-icon" />
+          <h3>Programming</h3>
+          <ul>
+            <li>Python, Java</li>
+            <li>HTML, CSS, JavaScript</li>
+          </ul>
         </div>
-
-        {/* Platforms */}
-        <div className="card">
-          <h3 style={{ marginBottom: "1rem" }}>Platforms</h3>
-          <p>VMware, VirtualBox, AWS, Linux, Windows Server, GitHub</p>
+        <div className="skill-card card">
+          <FaServer className="skill-icon" />
+          <h3>Platforms</h3>
+          <ul>
+            <li>VMware, VirtualBox, AWS</li>
+            <li>Linux, Windows Server, GitHub</li>
+          </ul>
         </div>
-
-        {/* Soft Skills */}
-        <div className="card">
-          <h3 style={{ marginBottom: "1rem" }}>Soft Skills</h3>
-          <p>Leadership, Public Speaking, Collaboration, Problem-Solving</p>
+        <div className="skill-card card wide">
+          <FaUsers className="skill-icon" />
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Leadership & Project Coordination</li>
+            <li>Public Speaking & Workshops</li>
+            <li>Collaboration & Problem-Solving</li>
+          </ul>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Skills;
