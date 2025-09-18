@@ -1,27 +1,20 @@
+// src/components/About.js
+
 export default function About() {
   return (
-    <section
-      id="about"
-      style={{
-        backgroundColor: "#111",
-        color: "white",
-        padding: "4rem 2rem",
-        textAlign: "center"
-      }}
-    >
-      <h2 style={{ fontSize: "2.5rem", marginBottom: "1.5rem" }}>About Me</h2>
-
-      <p style={{ fontSize: "1.2rem", maxWidth: "800px", margin: "0 auto 1rem" }}>
-        I’m <strong>Kaivalya Parihar</strong>, a Cybersecurity student and Vice President at 
-        <strong> CyberVulnX</strong>, passionate about networking, DFIR, threat analysis, and detection. 
-        I enjoy solving complex security challenges and turning theory into practical skills.
-      </p>
-
-      <p style={{ fontSize: "1rem", maxWidth: "800px", margin: "0 auto", lineHeight: "1.6" }}>
-        My goal is to empower individuals with cybersecurity knowledge and help build a safer digital ecosystem. 
-        Through CyberVulnX and my projects, I’m exploring innovative ways to make learning security engaging, 
-        interactive, and impactful.
-      </p>
+    <section className="about-section" id="about">
+      <div className="about-container">
+        <h2>About Me</h2>
+        <p>
+          I'm half engineer, half hacker, half musician—and yes, I know that's three halves. I build things, I break them to make them stronger, and I bring a creative rhythm to everything in between.
+        </p>
+        <p>
+          I offer a range of freelance services designed to bring your ideas to life. My expertise lies in <strong>Web Development</strong>, where I build everything from sleek <strong>portfolio templates</strong> and <strong>SaaS landing pages</strong> using React and Next.js to full-scale organization websites. I also provide <strong>Design & Branding</strong> services, creating everything from social media packs to complete branding kits.
+        </p>
+        <p>
+          Beyond development and design, I specialize in creating clear <strong>Technical Content</strong> and building insightful <strong>Data Dashboards</strong> with tools like Power BI. My unique background in mechanical engineering and cybersecurity means I bring a holistic, security-first approach to every project. Whether you need a robust web application or a data-driven solution, let's connect and build something great.
+        </p>
+      </div>
     </section>
   );
 }

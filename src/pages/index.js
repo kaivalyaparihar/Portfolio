@@ -1,4 +1,5 @@
-import Navbar from "../components/Navbar";
+import Head from 'next/head';
+import Navbar from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Skills from "../components/Skills";
@@ -8,8 +9,6 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { AnimatedSection } from '../components/AnimatedSection';
 import Initiatives from '../components/Initiatives';
-import Head from 'next/head';
-
 
 export default function Home() {
   return (
@@ -22,12 +21,12 @@ export default function Home() {
 
       <Navbar />
       <main>
-        <Hero />
+        <Hero /> {/* Added the Hero section to the top */}
 
         <AnimatedSection>
           <div id="about">
             <About />
-            </div>
+          </div>
         </AnimatedSection>
         
         <AnimatedSection>

@@ -1,56 +1,55 @@
 // src/components/Hero.js
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Hero = () => {
-  // Animation variants for the container to orchestrate children animations
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3, // Each child will animate 0.3s after the previous one
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
-  // Animation variants for each text element
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeOut',
-      },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
   };
 
   return (
-    // This 'hero' class will be styled in globals.css
     <section className="hero" id="hero">
-      <motion.div
-        className="hero-content"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.h1 variants={itemVariants}>
-          <div>CyberSec Practitioner</div>
-          <div>Community Leader</div>
-        </motion.h1>
-
-        <motion.p className="mission-statement" variants={itemVariants}>
-          Blending hands-on digital forensics with leadership at CyberVulnX to not only solve today's security challenges but also empower the next generation of defenders.
-        </motion.p>
-
-        <motion.div className="cta-buttons" variants={itemVariants}>
-          <a href="#projects" className="cta-button">View My Projects</a>
-          {/* Add a link to your actual resume file in the public folder later */}
-          <a href="/Kaivalya-Parihar-Resume.pdf" download className="cta-button secondary">Download Resume</a>
+      <div className="hero-grid-container">
+        {/* LEFT COLUMN: YOUR TEXT */}
+        <motion.div 
+          className="hero-text-container" 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1>
+            <motion.div variants={itemVariants}>Code.</motion.div>
+            <motion.div variants={itemVariants}>Design.</motion.div>
+            <motion.div variants={itemVariants}>Communicate.</motion.div>
+          </motion.h1>
+          <motion.p className="mission-statement" variants={itemVariants}>
+            Your versatile partner for <strong>secure development</strong>, <strong>modern branding</strong>, and <strong>data-driven content</strong> that empowers and engages your audience.
+          </motion.p>
+          <motion.div className="cta-buttons" variants={itemVariants}>
+            <a href="#projects" className="cta-button">View My Projects</a>
+            <a href="/Kaivalya-Parihar-Resume.pdf" download className="cta-button secondary">Download Resume</a>
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        {/* RIGHT COLUMN: YOUR IMAGE */}
+        <div className="hero-image-container">
+          <Image 
+            src="/DP transparent.png"
+            alt="Kaivalya Parihar" 
+            layout="fill" 
+            objectFit="contain"
+            priority
+          />
+        </div>
+      </div>
     </section>
   );
 };
