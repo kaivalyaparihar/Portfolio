@@ -147,33 +147,44 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-gold);
 }
 
-/* --- Center-Aligned Sticky Glass Navbar --- */
+/* This is the default state of the navbar (at the top of the page) */
 .site-header {
   position: fixed;
   top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: auto;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 16px;
   z-index: 1000;
   padding: 0.75rem 2rem;
+  
+  /* Make it transparent by default */
+  background: transparent;
+  backdrop-filter: none;
+  border: 1px solid transparent; /* Transparent border to prevent layout shift */
+  box-shadow: none;
+
+  /* Add a smooth transition for all properties */
+  transition: all 0.3s ease-in-out;
+}
+
+/* This class is added by React when the user scrolls down */
+.site-header.scrolled {
   background: rgba(30, 30, 30, 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  
-  /* --- THIS IS THE UPDATED BORDER --- */
-  border: 0.1px solid var(--accent-gold); 
-  
-  border-radius: 50px;
-  
-  /* --- SHADOW IS RESTORED TO ORIGINAL --- */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+  border: 1px solid var(--accent-gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Make sure the content inside the header is aligned */
 .site-header .navbar-container {
   display: flex;
   align-items: center;
-  gap: 2.5rem; /* Adjust the space between your logo and links */
+  justify-content: center; /* Pushes logo and links to opposite ends */
+  width: 100%;
+  gap: 5rem;
 }
 
 /* --- SECTION: Hero --- */
@@ -729,4 +740,61 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 90vh;
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
   border-radius: 8px;
+}
+
+/* --- Hamburger Menu & Mobile Nav Styles --- */
+
+/* Style for the hamburger icon itself */
+.hamburger-menu {
+  display: none; /* Hidden by default on desktop */
+  font-size: 1.8rem;
+  color: var(--text-light);
+  cursor: pointer;
+  z-index: 1001; /* Make sure it's above the navbar background */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  /* Show the hamburger icon on mobile */
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Style for the navigation links container on mobile */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen to the right */
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-onyx);
+    
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+    transition: right 0.4s ease-in-out;
+  }
+  
+  /* This class is applied by React to slide the menu into view */
+  .nav-links.mobile-active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem; /* Make links bigger for easier tapping */
+  }
+
+  /* Adjust the main header on mobile */
+  .site-header {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--card-border);
+    padding: 1rem 1.5rem;
+    background: rgba(11, 15, 14, 0.8); /* Darken bg for better readability */
+  }
 }
