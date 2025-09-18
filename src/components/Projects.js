@@ -100,7 +100,9 @@ const Projects = () => {
             <h3>Pathfinding Visualizer</h3>
             <div className="details-card card">
               <h4>Role & Objective</h4>
-              <p>Developed an interactive tool to visually demonstrate pathfinding algorithms like Dijkstra's, A*, and BFS for educational purposes.</p>
+              <p>
+                {"Developed an interactive tool to visually demonstrate pathfinding algorithms like Dijkstra's, A*, and BFS for educational purposes."}
+              </p>
             </div>
             <div className="details-card card">
               <h4>Tech Stack</h4>

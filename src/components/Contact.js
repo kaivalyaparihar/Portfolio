@@ -9,7 +9,7 @@ const Contact = () => {
         <div className="contact-info">
           <h2>Get In Touch</h2>
           <p>
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            {`I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.`}
           </p>
           <div className="social-links">
             <a href="mailto:kaivalya.parihar@gmail.com" aria-label="Email">
