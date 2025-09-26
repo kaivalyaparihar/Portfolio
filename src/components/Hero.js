@@ -44,9 +44,7 @@ const Hero = () => {
           <Image 
             src="/DP transparent.png"
             alt="Kaivalya Parihar" 
-            layout="fill" 
-            objectFit="contain"
-            priority
+            fill
           />
         </div>
       </div>
